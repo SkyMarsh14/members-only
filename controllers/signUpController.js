@@ -7,7 +7,7 @@ const signUpController = {
   createUser: async (req, res) => {
     const { firstName, lastName, username, password } = req.body;
     try {
-      await queries.addUser(firstName, lastName, username, password);
+      await queries.addUser(username, firstName, lastName, password);
     } catch (err) {
       console.log(err);
     }

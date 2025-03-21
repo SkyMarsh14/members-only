@@ -1,2 +1,5 @@
 <h1>Welcome to the clubhouse.</h1>
 <div>Sign up to gain access to our member-exclusive resources.</div>
+<% if(locals.user){ %>
+<h2>Welcome back user <%=user.username %> are signed in!</h2>
+<%} %>

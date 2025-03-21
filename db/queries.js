@@ -7,6 +7,12 @@ const queries = {
       [username, firstName, lastName, password]
     );
   },
+  searchUser: async (username) => {
+    const data = await pool.query(`SELECT * from users WHERE username=$1`, [
+      username,
+    ]);
+    return data.rows[0];
+  },
 };
 
 module.exports = queries;

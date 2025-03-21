@@ -131,6 +131,7 @@ dist
 # VS Code config files
 .vscode/
 
+>>>>>>> 8a20606 (add sign-up functionality with db.)
 # yarn v2
 .yarn/cache
 .yarn/unplugged

@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const path = require("node:path");
+const passport = require("passport");
+const session = require("express-session");
 const indexRouter = require("./routes/indexRouter");
 const signUpRouter = require("./routes/signUpRouter");
 const signInRouter = require("./routes/signInRouter");
@@ -11,7 +13,15 @@ app.set("view engine", "ejs");
 const assetPath = path.join(__dirname, "public");
 app.use(express.static(assetPath));
 app.use(express.urlencoded({ extended: true }));
-
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+require("./config/passport");
+app.use(passport.session());
 app.use("/", indexRouter);
 app.use("/sign-up", signUpRouter);
 app.use("/sign-in", signInRouter);
