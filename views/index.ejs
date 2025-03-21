@@ -6,7 +6,9 @@
     <title>Clubhouse homepage</title>
   </head>
   <body>
-    <h1>Welcome to the clubhouse.</h1>
-    <div>Sign up to gain access to our member-exclusive resources.</div>
+    <%-include('partials/header') %> <% switch(page){ case 'home': %>
+    <%-include('partials/home') %> <% break; case 'sign-up': %>
+    <%-include('partials/sign-up') %> <% break; case 'sign-in':%>
+    <%-include('partials/sign-in') %> <% }%>
   </body>
 </html>
