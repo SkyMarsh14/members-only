@@ -8,6 +8,7 @@ signInRouter.post(
   passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/sign-up",
+    failureMessage: true,
   })
 );
 

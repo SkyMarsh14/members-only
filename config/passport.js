@@ -17,11 +17,11 @@ const authUser = async (username, password, done) => {
 };
 passport.use(new LocalStrategy(authUser));
 passport.serializeUser((user, done) => {
-  done(null, user.id);
+  done(null, user.username);
 });
-passport.deserializeUser(async (id, done) => {
+passport.deserializeUser(async (username, done) => {
   try {
-    const user = await queries.searchUser(id);
+    const user = await queries.searchUser(username);
     done(null, user);
   } catch (err) {
     done(err);
