@@ -29,6 +29,12 @@ const queries = {
       "SELECT username,created_at,title,text from messages JOIN users on users.id=messages.userId"
     );
   },
+  createPost: async (title, text, userId) => {
+    await pool.query(
+      "INSERT INTO messages(title,text,userId) VALUES($1,$2,$3)",
+      [title, text, userId]
+    );
+  },
 };
 
 module.exports = queries;

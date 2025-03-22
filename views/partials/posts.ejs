@@ -1,9 +1,15 @@
-<% if(locals.posts){ %> <% posts.forEach((post)=>{ %>
+<% if(locals.posts){ %> <% if(!user){ %>
+<div class="created-to-view">
+  Create an account to view the details. <a href="/sign-up">Sign up</a>
+</div>
+<% }else if(user && user.hasMembership){ %> <%-include('./postForm') %> <% } %>
+<% posts.forEach((post)=>{ %> <% if(!user){ %> <%post.username='???' %> <%
+post.created_at='???' %> <% } %>
 <div class="post">
   <div class="author">User: <%=post.username %></div>
+  <div class="timestamp">Created at <%=post.created_at %></div>
   <div class="title">Title: <%=post.title %></div>
   <div class="message">Message: <%=post.text %></div>
-  <div class="timestamp">Created at <%=post.created_at %></div>
 </div>
 <% }) %> <% }else{ %>
 <div>No posts available.</div>
