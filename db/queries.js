@@ -4,7 +4,7 @@ const queries = {
     const match = await pool.query(`SELECT * FROM users WHERE username=$1`, [
       username,
     ]);
-    if (match) {
+    if (match.rowCount > 0) {
       throw new Error("Username already in use.");
     }
     await pool.query(
@@ -20,6 +20,9 @@ const queries = {
   searchUserById: async (id) => {
     const data = await pool.query(`SELECT * from users WHERE id=$1`, [id]);
     return data.rows[0];
+  },
+  giveMembership: async (id) => {
+    await pool.query(`UPDATE users SET "hasMembership"=true WHERE id=$1`, [id]);
   },
 };
 

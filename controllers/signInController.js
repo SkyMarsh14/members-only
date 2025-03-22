@@ -3,7 +3,7 @@ const signInController = {
   get: (req, res) => {
     res.render("index", {
       page: "sign-in",
-      failureMessages: req.session.messages,
+      errors: req.session.messages,
     });
   },
   authenticate: passport.authenticate("local", {

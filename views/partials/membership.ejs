@@ -1,0 +1,9 @@
+<h1>Obtain membership</h1>
+<% if(locals.error){ %>
+<div><%=error %></div>
+<% } %>
+<form action="/membership" method="post">
+  <label for="passphrase">Enter passphrase</label>
+  <input type="text" id="passphrase" name="passphrase" />
+  <button type="submit">Enter</button>
+</form>

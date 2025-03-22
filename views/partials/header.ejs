@@ -2,8 +2,12 @@
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/sign-up">Sign up</a></li>
+      <% if(!locals.user) {%>
       <li><a href="/sign-in">Sign in</a></li>
+      <li><a href="/sign-up">Sign up</a></li>
+      <% }else{ %>
+      <li><a href="/logout">Logout</a></li>
+      <% } %>
     </ul>
   </nav>
 </header>

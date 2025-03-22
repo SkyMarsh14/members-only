@@ -5,10 +5,11 @@ const { argv } = require("node:process");
 
 const USER = `CREATE TABLE IF NOT EXISTS users(
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    username VARCHAR(255),
+    username VARCHAR(255) UNIQUE,
     "firstName" VARCHAR(255),
     "lastName" VARCHAR(255),
-    password VARCHAR (255)
+    password VARCHAR (255),
+    "hasMembership" BOOLEAN
 )`;
 
 const MESSAGE = `CREATE TABLE IF NOT EXISTS messages(

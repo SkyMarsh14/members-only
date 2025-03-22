@@ -1,6 +1,6 @@
 <h1>Sign in</h1>
-<% if(locals.failureMessages){ %> <% for(let i=0;i<failureMessages.length; i++) {%>
-  <div><%=failureMessages.pop() %></div>
+<% if(locals.errors){ %> <% for(let i=0;i<errors.length; i++) {%>
+  <li class="sign-in-error"><%=errors.pop() %></li>
   <% } %> <% } %>
 
   <form action="/sign-in" method="post">

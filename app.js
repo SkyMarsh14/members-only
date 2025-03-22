@@ -9,6 +9,7 @@ const signUpRouter = require("./routes/signUpRouter");
 const signInRouter = require("./routes/signInRouter");
 const logoutRouter = require("./routes/logoutRouter");
 const pool = require("./db/pool");
+const membershipRouter = require("./routes/membershipRouter");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -34,6 +35,7 @@ app.use("/", indexRouter);
 app.use("/sign-up", signUpRouter);
 app.use("/sign-in", signInRouter);
 app.use("/logout", logoutRouter);
+app.use("/membership", membershipRouter);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Express app is listening to PORT ${PORT}.`);
