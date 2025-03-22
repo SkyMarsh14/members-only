@@ -9,7 +9,8 @@
     <%-include('partials/header') %> <% switch(page){ case 'home': %>
     <%-include('partials/home') %> <% break; case 'sign-up': %>
     <%-include('partials/sign-up') %> <% break; case 'membership':%>
-    <%-include('partials/membership') %> <% break; case 'sign-in':%>
+    <%-include('partials/membership') %> <% break; case 'unauthorized':%>
+    <%-include('partials/unauthorized') %> <% break; case 'sign-in': %>
     <%-include('partials/sign-in') %> <% }%>
   </body>
 </html>

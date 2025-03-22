@@ -4,10 +4,7 @@ const membershipController = {
     if (!req.user.hasMembership) {
       res.render("index", { page: "membership", error: req.session.message });
     } else {
-      res.render("index", {
-        page: "home",
-        message: "You already have a membership!",
-      });
+      res.redirect("/");
     }
   },
   post: async (req, res, next) => {
