@@ -1,24 +1,37 @@
 <h1>Sign up</h1>
+<% if(locals.errors){ %>
+  <ul>
+    <% errors.forEach((error)=>{ %>
+      <li><%=error.msg %></li>
+    <% }) %>
+  </ul>
+  <% } %>
 <form action="/sign-up" method="post">
   <div class="firstName">
     <label for="firstName">First Name: </label>
-    <input type="text" id="firstName" name="firstName" />
+    <input
+      type="text"
+      id="firstName"
+      name="firstName"
+      minlength=<%=nameLength.min %>
+    maxlength=<%=nameLength.max%> required/>
   </div>
   <div class="lastName">
     <label for="lastName">Last Name: </label>
-    <input type="text" id="lastName" name="lastName" />
+    <input type="text" id="lastName" name="lastName" minlength=<%=nameLength.min %>
+    maxlength=<%=nameLength.max%> required />
   </div>
   <div class="username">
     <label for="username">username</label>
-    <input type="text" id="username" name="username" />
+    <input type="text" id="username" name="username" required/>
   </div>
   <div class="password">
     <label for="password">Password</label>
-    <input type="password" id="password" name="password" />
+    <input type="password" id="password" name="password" minlength="3" maxlength="20" required />
   </div>
   <div class="confirm-password">
     <label for="confirm-password">Confirm Password</label>
-    <input type="password" id="confirm-password" name="confirmPassword" />
+    <input type="password" id="confirm-password" name="confirmPassword" minlength="3" maxlength="20" required/>
   </div>
   <button type="submit">Register</button>
 </form>
