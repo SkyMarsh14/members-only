@@ -8,6 +8,7 @@ const indexRouter = require("./routes/indexRouter");
 const signUpRouter = require("./routes/signUpRouter");
 const signInRouter = require("./routes/signInRouter");
 const logoutRouter = require("./routes/logoutRouter");
+const pool = require("./db/pool");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -16,6 +17,11 @@ app.use(express.static(assetPath));
 app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
+    store: new (require("connect-pg-simple")(session))({
+      pool: pool,
+      createTableIfMissing: true,
+      tableName: "session",
+    }),
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
