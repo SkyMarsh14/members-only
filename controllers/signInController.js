@@ -1,14 +1,16 @@
 const passport = require("passport");
 const signInController = {
   get: (req, res) => {
-    res.render("index", { page: "sign-in" });
-  },
-  post: () => {
-    passport.authenticate("local", {
-      failureRedirect: "/sign-up",
-      successRedirect: "/",
+    res.render("index", {
+      page: "sign-in",
+      failureMessages: req.session.messages,
     });
   },
+  authenticate: passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/sign-in",
+    failureMessage: true,
+  }),
 };
 
 module.exports = signInController;

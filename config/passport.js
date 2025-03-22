@@ -5,13 +5,13 @@ const { comparePassword } = require("./../lib/passportUtils");
 const authUser = async (username, password, done) => {
   try {
     const authenticated_user = await queries.searchUser(username);
-    if (!authenticated_user) {
+    if (!authenticated_user.rows[0]) {
       return done(null, false, { message: "Incorrect username." });
     }
-    if (!(await comparePassword(password, authenticated_user))) {
+    if (!(await comparePassword(password, authenticated_user.rows[0]))) {
       return done(null, false, { message: "Incorrect password." });
     }
-    return done(null, authenticated_user);
+    return done(null, authenticated_user.rows[0]);
   } catch (err) {
     return done(err);
   }
