@@ -1,5 +1,4 @@
 const pool = require("./pool");
-
 const queries = {
   addUser: async (username, firstName, lastName, password) => {
     await pool.query(
