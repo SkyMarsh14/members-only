@@ -13,6 +13,10 @@ const queries = {
     ]);
     return data.rows[0];
   },
+  searchUserById: async (id) => {
+    const data = await pool.query(`SELECT * from users WHERE id=$1`, [id]);
+    return data.rows[0];
+  },
 };
 
 module.exports = queries;
