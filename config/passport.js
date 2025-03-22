@@ -8,7 +8,7 @@ const authUser = async (username, password, done) => {
     if (!authenticated_user) {
       return done(null, false, { message: "Incorrect username." });
     }
-    if (!comparePassword(password, authenticated_user)) {
+    if (!(await comparePassword(password, authenticated_user))) {
       return done(null, false, { message: "Incorrect password." });
     }
     return done(null, authenticated_user);
