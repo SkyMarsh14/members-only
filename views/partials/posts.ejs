@@ -1,0 +1,10 @@
+<% if(locals.posts){ %> <% posts.forEach((post)=>{ %>
+<div class="post">
+  <div class="author">User: <%=post.username %></div>
+  <div class="title">Title: <%=post.title %></div>
+  <div class="message">Message: <%=post.text %></div>
+  <div class="timestamp">Created at <%=post.created_at %></div>
+</div>
+<% }) %> <% }else{ %>
+<div>No posts available.</div>
+<% } %>

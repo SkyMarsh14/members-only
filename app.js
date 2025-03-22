@@ -11,6 +11,7 @@ const logoutRouter = require("./routes/logoutRouter");
 const pool = require("./db/pool");
 const membershipRouter = require("./routes/membershipRouter");
 const unauthorizedRouter = require("./routes/unauthorizedRouter");
+const postsRouter = require("./routes/postsRouter");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -37,6 +38,7 @@ app.use("/sign-up", signUpRouter);
 app.use("/sign-in", signInRouter);
 app.use("/logout", logoutRouter);
 app.use("/membership", membershipRouter);
+app.use("/posts", postsRouter);
 app.use("/unauthorized", unauthorizedRouter);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

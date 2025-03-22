@@ -24,6 +24,11 @@ const queries = {
   giveMembership: async (id) => {
     await pool.query(`UPDATE users SET "hasMembership"=true WHERE id=$1`, [id]);
   },
+  getPosts: async () => {
+    return await pool.query(
+      "SELECT username,created_at,title,text from messages JOIN users on users.id=messages.userId"
+    );
+  },
 };
 
 module.exports = queries;
