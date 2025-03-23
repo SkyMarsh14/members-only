@@ -1,13 +1,15 @@
-<h1>Obtain membership</h1>
+<h1 class="center">Obtain membership</h1>
 <% if(locals.error){ %>
 <div><%=error %></div>
 <% } %>
-<form action="/membership" method="post">
+<form class="log-in-form membership-form" action="/membership" method="post">
   <label for="passphrase">Enter passphrase</label>
   <input type="text" id="passphrase" name="passphrase" />
-  <button type="submit">Enter</button>
+  <button class="submit-btn round-btn" type="submit">Enter</button>
+  <div type="button" class="round-btn tooltip hint" popovertarget="hint">
+    Show hint
+    <div class="tooltip tooltiptext">
+      It is unarguably the best programming lanaugage
+    </div>
+  </div>
 </form>
-<button popovertarget="hint">Show hint</button>
-<div id="hint" popover>
-  <p>It is unarguably the best programming language.</p>
-</div>
