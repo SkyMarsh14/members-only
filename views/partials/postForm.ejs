@@ -1,8 +1,9 @@
-<form action="/posts" method="post">
+<form action="/posts" method="post" class="post-form">
   <div class="title">
     <label for="title">Title</label>
     <input
       type="text"
+      placeholder="Title..."
       name="title"
       id="title"
       minlength="3"
@@ -25,5 +26,8 @@
       placeholder="What's happening?"
     ></textarea>
   </div>
-  <button type="submit">Post</button>
+  <div class="form-btn-container">
+    <button class="post-btn round-btn" type="submit">Post</button>
+    <button type="button" class="clear-btn round-btn">Clear</button>
+  </div>
 </form>

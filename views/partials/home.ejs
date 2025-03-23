@@ -1,18 +1,29 @@
-<div class="homeContainer">
-  <h1>Let's connect to the world</h1>
-  <% if(locals.user){ %>
-  <h2>Welcome back <%=user.username %>.<br />You are signed in.</h2>
-  <% if(locals.message) {%>
-  <div><%=message %></div>
-  <% } %> <% if(!locals.user.hasMembership){ %>
-  <div>Don't have a membership yet?</div>
-  <div>Unlock membership features by gaining membership!</div>
-  <div><a href="/membership">Join now!</a></div>
-  <% } else{%>
-  <div>You have our membership.</div>
-  <div>Explore membership exclusive features.</div>
-  <%} } else{ %>
-  <h2>Share your thoughts with in a secure and private website.</h2>
-  <div>Sign up to gain access to our member-exclusive resources.</div>
-  <% } %>
+<h1>Welcome to Skys Connect</h1>
+<% if(locals.user){ %>
+<div>Welcome back <%=user.username %></div>
+<% if(locals.message) {%>
+<div><%=message %></div>
+<% } %> <% if(!locals.user.hasMembership){ %>
+<div>Don't have a membership yet?</div>
+<div>Unlock membership features by gaining membership!</div>
+<div><a href="/membership" class="link-blue-bold">Join now!</a></div>
+<% } else{%>
+<div>You have our membership.</div>
+<div>
+  Explore membership exclusive features at
+  <a href="/posts" class="link-blue-bold">posts</a>.
+</div>
+<%} } else{ %>
+<div>
+  <a class="link-blue-bold" href="/sign-up">Sign up</a> to create an account to
+  post and view messages.
+</div>
+<div>
+  Already have an account? Please you can
+  <a href="/sign-in" class="link-blue-bold">Sign in</a> from here.
+</div>
+<% } %>
+<div class="home-description">
+  This website was build using Express, EJS, PassportJS, Bcrypt, Postgresql, and
+  Express validation.
 </div>

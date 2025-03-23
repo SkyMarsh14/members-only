@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/customProperties.css" />
     <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/posts.css" />
+    <script src="/js/form.js" defer></script>
   </head>
   <body>
-    <%-include('partials/header') %> <% switch(page){ case 'home': %>
-    <%-include('partials/home') %> <% break; case 'sign-up': %>
-    <%-include('partials/sign-up') %> <% break; case 'membership':%>
-    <%-include('partials/membership') %> <% break; case 'unauthorized':%>
-    <%-include('partials/unauthorized') %> <% break; case 'posts': %>
-    <%-include('partials/posts') %> <% break; case 'sign-in': %>
-    <%-include('partials/sign-in') %> <% }%>
+    <%-include('partials/header') %>
+    <div class="pageContainer">
+      <% switch(page){ case 'home': %> <%-include('partials/home') %> <% break;
+      case 'sign-up': %> <%-include('partials/sign-up') %> <% break; case
+      'membership':%> <%-include('partials/membership') %> <% break; case
+      'unauthorized':%> <%-include('partials/unauthorized') %> <% break; case
+      'posts': %> <%-include('partials/posts') %> <% break; case 'sign-in': %>
+      <%-include('partials/sign-in') %> <% }%>
+    </div>
   </body>
 </html>

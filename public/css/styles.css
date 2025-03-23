@@ -1,0 +1,15 @@
+.pageContainer {
+  padding: 1em 3em;
+  margin: 1em 5em;
+  font-size: 1.3em;
+}
+.pageContainer h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.link-blue-bold,
+.link-blue-bold:visited {
+  color: blue;
+  font-weight: 800;
+}
