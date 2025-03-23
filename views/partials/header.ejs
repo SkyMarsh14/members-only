@@ -1,7 +1,18 @@
 <header>
   <nav>
     <ul>
-      <li><a href="/" class="logo">Home</a></li>
+      <li>
+        <a href="/">
+          <div class="header-logo">
+            <div class="logo-icon">
+              <div class="cloud"></div>
+              <div class="connection connection-1"></div>
+              <div class="connection connection-2"></div>
+            </div>
+            <div class="logo-text">SKYS CONNECT</div>
+          </div>
+        </a>
+      </li>
       <li><a href="/posts">Posts</a></li>
       <% if(!locals.user) {%>
       <li><a href="/sign-in">Sign in</a></li>

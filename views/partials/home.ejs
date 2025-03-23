@@ -1,16 +1,18 @@
-<h1>Clubhouse</h1>
-<% if(locals.user){ %>
-<h2>Welcome back <%=user.username %>.<br />You are signed in.</h2>
-<% if(locals.message) {%>
-<div><%=message %></div>
-<% } %> <% if(!locals.user.hasMembership){ %>
-<div>Don't have a membership yet?</div>
-<div>Unlock membership features by gaining membership!</div>
-<div><a href="/membership">Join now!</a></div>
-<% } else{%>
-<div>You have our membership.</div>
-<div>Explore membership exclusive features.</div>
-<%} } else{ %>
-<h2>Share your thoughts with in a secure and private website.</h2>
-<div>Sign up to gain access to our member-exclusive resources.</div>
-<% } %>
+<div class="homeContainer">
+  <h1>Let's connect to the world</h1>
+  <% if(locals.user){ %>
+  <h2>Welcome back <%=user.username %>.<br />You are signed in.</h2>
+  <% if(locals.message) {%>
+  <div><%=message %></div>
+  <% } %> <% if(!locals.user.hasMembership){ %>
+  <div>Don't have a membership yet?</div>
+  <div>Unlock membership features by gaining membership!</div>
+  <div><a href="/membership">Join now!</a></div>
+  <% } else{%>
+  <div>You have our membership.</div>
+  <div>Explore membership exclusive features.</div>
+  <%} } else{ %>
+  <h2>Share your thoughts with in a secure and private website.</h2>
+  <div>Sign up to gain access to our member-exclusive resources.</div>
+  <% } %>
+</div>

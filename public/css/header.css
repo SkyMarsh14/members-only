@@ -1,8 +1,12 @@
 header {
-  height: 5em;
+  height: 4em;
   background-color: var(--header-main-bg-color);
   color: var(--header-main-text-color);
   font-size: var(--header-nav-font-size);
+}
+nav,
+ul {
+  height: 100%;
 }
 a,
 a:visited {
@@ -12,7 +16,86 @@ a:visited {
 li {
   list-style-type: none;
 }
+li:first-child {
+  margin-right: auto;
+}
 header ul {
   display: flex;
+  align-items: center;
   gap: 2em;
+  padding: 0 5em;
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3494e6, #ec6ead);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cloud {
+  position: absolute;
+  width: 24px;
+  height: 8px;
+  background-color: white;
+  border-radius: 8px;
+  top: 50%;
+  opacity: 0.8;
+}
+
+.cloud:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  top: -6px;
+  left: 4px;
+}
+
+.cloud:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  top: -4px;
+  right: 6px;
+}
+
+.connection {
+  position: absolute;
+  width: 3px;
+  height: 16px;
+  background-color: white;
+  opacity: 0.6;
+  border-radius: 2px;
+}
+
+.connection-1 {
+  transform: rotate(-45deg) translateY(-4px);
+}
+
+.connection-2 {
+  transform: rotate(45deg) translateY(-4px);
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.5px;
 }
