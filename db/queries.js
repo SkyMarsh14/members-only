@@ -26,7 +26,7 @@ const queries = {
   },
   getPosts: async () => {
     return await pool.query(
-      "SELECT username,created_at,title,text,messages.id from messages JOIN users on users.id=messages.userId"
+      "SELECT username,created_at,title,text,messages.id from messages JOIN users on users.id=messages.userId ORDER BY created_at DESC"
     );
   },
   createPost: async (title, text, userId) => {

@@ -1,7 +1,8 @@
 <% if(locals.posts){ %> <% if(!user){ %>
 <div class="created-to-view">
   Create an account or sign in to view the details.
-  <a href="/sign-up">Sign up</a> <span>or </span><a href="/sign-in">Sign in</a>
+  <a href="/sign-up" class="link-blue-bold">Sign up</a> <span>or </span
+  ><a class="link-blue-bold" href="/sign-in">Sign in</a>
 </div>
 <% }else if((user && user.hasMembership) || (user&&user.isAdmin) ){ %>
 <%-include('./postForm') %> <% } %> <% posts.forEach((post)=>{ %> <% if(!user){
@@ -13,9 +14,17 @@
   <div class="message">Message: <%=post.text %></div>
   <% if(user&&user.isAdmin){ %>
   <form action="/posts/delete" method="post">
-    <button type="submit" name="postId" value="<%= post.id%>">Delete</button>
+    <button
+      class="delete-post-btn round-btn"
+      type="submit"
+      name="postId"
+      value="<%= post.id%>"
+    >
+      Delete
+    </button>
   </form>
+  <% } %>
 </div>
-<% } %> <% }) %> <% }else{ %>
+<% }) %> <% }else{ %>
 <div>No posts available.</div>
 <% } %>

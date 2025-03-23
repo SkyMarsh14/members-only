@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<h1 class="center">Sign up</h1>
 <% if(locals.errors){ %>
   <ul>
     <% errors.forEach((error)=>{ %>
@@ -6,7 +6,7 @@
     <% }) %>
   </ul>
   <% } %>
-<form action="/sign-up" method="post">
+<form action="/sign-up" method="post" class="log-in-form">
   <div class="firstName">
     <label for="firstName">First Name: </label>
     <input
@@ -34,8 +34,8 @@
     <input type="password" id="confirm-password" name="confirmPassword" minlength="3" maxlength="20" required/>
   </div>
   <div class="admin">
-    <label for="isAdmin">Is Admin (optional) </label>
     <input type="checkbox" name='isAdmin' id="isAdmin">
+    <label for="isAdmin">Is Admin (optional) </label>
   </div>
-  <button type="submit">Register</button>
+  <button type="submit" class="submit-btn round-btn">Register</button>
 </form>

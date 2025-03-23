@@ -13,3 +13,28 @@
   color: blue;
   font-weight: 800;
 }
+.log-in-form input {
+  width: 100%;
+}
+.log-in-form {
+  display: flex;
+  flex-direction: column;
+}
+.submit-btn {
+  background-color: #4f3af6;
+  border: none;
+  color: white;
+  margin-top: 1.5em;
+  cursor: pointer;
+}
+.center {
+  text-align: center;
+}
+.admin input {
+  width: fit-content;
+  margin-right: 1em;
+}
+.created-to-view {
+  font-size: 1.3em;
+  padding: 0.8em 1em;
+}
