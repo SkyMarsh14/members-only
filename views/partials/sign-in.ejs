@@ -5,12 +5,27 @@
 
   <form action="/sign-in" method="post">
     <div class="username">
-      <label for="username">username</label>
-      <input type="text" name="username" id="username" />
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        required
+        minlength="3"
+        maxlenght="30"
+      />
     </div>
     <div class="password">
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        minlength="3"
+        maxlength="20"
+      />
     </div>
     <button type="submit">Sign in</button>
   </form>
+</errors.length;>

@@ -1,6 +1,7 @@
 <% if(locals.posts){ %> <% if(!user){ %>
 <div class="created-to-view">
-  Create an account to view the details. <a href="/sign-up">Sign up</a>
+  Create an account or sign in to view the details.
+  <a href="/sign-up">Sign up</a> <span>or </span><a href="/sign-in">Sign in</a>
 </div>
 <% }else if(user && user.hasMembership){ %> <%-include('./postForm') %> <% } %>
 <% posts.forEach((post)=>{ %> <% if(!user){ %> <%post.username='???' %> <%

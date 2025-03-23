@@ -2,9 +2,11 @@ const { body, validationResult } = require("express-validator");
 const { registerUser } = require("./../lib/passportUtils");
 const nameLength = { min: 1, max: 10 };
 const pwLength = { min: 3, max: 20 };
+const usernameLength = { min: 3, max: 30 };
 const alphaErr = "must only contain letters.";
 const lengthErr = "must be between 1 and 10 characters.";
 const emptyErr = "field must not be empty.";
+
 const validateUser = [
   body("firstName")
     .trim()
@@ -22,7 +24,12 @@ const validateUser = [
     .withMessage(`Last name ${alphaErr}`)
     .isLength(nameLength)
     .withMessage(`Last name ${lengthErr}`),
-  body("username").trim().notEmpty().withMessage(`Username ${emptyErr}`),
+  body("username")
+    .trim()
+    .notEmpty()
+    .withMessage(`Username ${emptyErr}`)
+    .isLength(usernameLength)
+    .withMessage("Username must be between 3 and 30 characters."),
   body("password")
     .trim()
     .notEmpty()

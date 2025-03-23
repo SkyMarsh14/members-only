@@ -2,7 +2,11 @@ const queries = require("./../db/queries");
 const membershipController = {
   get: async (req, res) => {
     if (!req.user.hasMembership) {
-      res.render("index", { page: "membership", error: req.session.message });
+      res.render("index", {
+        page: "membership",
+        error: req.session.message,
+        user: req.user,
+      });
     } else {
       res.redirect("/");
     }
