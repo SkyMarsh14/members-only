@@ -81,3 +81,8 @@
   border-style: solid;
   border-color: black transparent transparent transparent;
 }
+.notFoundBtn {
+  background-color: #4f3af6;
+  color: white;
+  margin: 1em 0;
+}

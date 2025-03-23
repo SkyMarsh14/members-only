@@ -19,7 +19,9 @@
       'membership':%> <%-include('partials/membership') %> <% break; case
       'unauthorized':%> <%-include('partials/unauthorized') %> <% break; case
       'posts': %> <%-include('partials/posts') %> <% break; case 'sign-in': %>
-      <%-include('partials/sign-in') %> <% }%>
+      <%-include('partials/sign-in') %> <% break; case '404': %>
+      <%-include('partials/404') %> <% break; case 'error': %>
+      <%-include('partials/error') %> <% }%>
     </div>
   </body>
 </html>

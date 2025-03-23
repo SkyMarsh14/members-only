@@ -40,6 +40,13 @@ app.use("/logout", logoutRouter);
 app.use("/membership", membershipRouter);
 app.use("/posts", postsRouter);
 app.use("/unauthorized", unauthorizedRouter);
+app.get("*", (req, res) => {
+  res.render("index", { page: "404", user: req.user });
+});
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(500).render("index", { page: "error", error: err, res });
+});
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Express app is listening to PORT ${PORT}.`);
