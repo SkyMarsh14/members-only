@@ -1,0 +1,18 @@
+header {
+  height: 5em;
+  background-color: var(--header-main-bg-color);
+  color: var(--header-main-text-color);
+  font-size: var(--header-nav-font-size);
+}
+a,
+a:visited {
+  color: var(--header-main-text-color);
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+header ul {
+  display: flex;
+  gap: 2em;
+}
