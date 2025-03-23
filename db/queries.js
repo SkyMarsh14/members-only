@@ -1,6 +1,6 @@
 const pool = require("./pool");
 const queries = {
-  addUser: async (username, firstName, lastName, password) => {
+  addUser: async (username, firstName, lastName, password, isAdmin = false) => {
     const match = await pool.query(`SELECT * FROM users WHERE username=$1`, [
       username,
     ]);
@@ -8,8 +8,8 @@ const queries = {
       throw new Error("Username already in use.");
     }
     await pool.query(
-      'INSERT INTO users(username,"firstName","lastName",password) VALUES ($1,$2,$3,$4)',
-      [username, firstName, lastName, password]
+      'INSERT INTO users(username,"firstName","lastName",password,"isAdmin") VALUES ($1,$2,$3,$4,$5)',
+      [username, firstName, lastName, password, isAdmin]
     );
   },
   searchUser: async (username) => {

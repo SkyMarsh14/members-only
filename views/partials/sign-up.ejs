@@ -22,7 +22,7 @@
     maxlength=<%=nameLength.max%> required />
   </div>
   <div class="username">
-    <label for="username">username</label>
+    <label for="username">Username</label>
     <input type="text" id="username" name="username" required/>
   </div>
   <div class="password">
@@ -32,6 +32,10 @@
   <div class="confirm-password">
     <label for="confirm-password">Confirm Password</label>
     <input type="password" id="confirm-password" name="confirmPassword" minlength="3" maxlength="20" required/>
+  </div>
+  <div class="admin">
+    <label for="isAdmin">Is Admin (optional) </label>
+    <input type="checkbox" name='isAdmin' id="isAdmin">
   </div>
   <button type="submit">Register</button>
 </form>

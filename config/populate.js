@@ -10,7 +10,8 @@ const USER = `CREATE TABLE IF NOT EXISTS users(
     "firstName" VARCHAR(255),
     "lastName" VARCHAR(255),
     password VARCHAR (255),
-    "hasMembership" BOOLEAN
+    "hasMembership" BOOLEAN,
+    "isAdmin" BOOLEAN
 )`;
 
 const MESSAGE = `CREATE TABLE IF NOT EXISTS messages(

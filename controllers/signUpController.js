@@ -46,6 +46,9 @@ const validateUser = [
       }
       return true;
     }),
+  body("isAdmin").customSanitizer((value, { req }) => {
+    return value === "on" ? true : false;
+  }),
 ];
 const signUpController = {
   get: async (req, res) => {
