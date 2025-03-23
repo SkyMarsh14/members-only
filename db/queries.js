@@ -26,7 +26,7 @@ const queries = {
   },
   getPosts: async () => {
     return await pool.query(
-      "SELECT username,created_at,title,text from messages JOIN users on users.id=messages.userId"
+      "SELECT username,created_at,title,text,messages.id from messages JOIN users on users.id=messages.userId"
     );
   },
   createPost: async (title, text, userId) => {
@@ -34,6 +34,9 @@ const queries = {
       "INSERT INTO messages(title,text,userId) VALUES($1,$2,$3)",
       [title, text, userId]
     );
+  },
+  deletePost: async (postId) => {
+    await pool.query("DELETE FROM messages WHERE id=$1", [postId]);
   },
 };
 
